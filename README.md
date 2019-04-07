@@ -1,5 +1,5 @@
 # vue-firebase
-This project was develop with Vuejs and simulate tickets for a theater.
+This project was developed with Vuejs and simulate tickets for a theater.
 ## Project setup
 ```
 npm install
