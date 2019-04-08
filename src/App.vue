@@ -32,5 +32,23 @@ html {
   font-size: 3rem;
   text-align: center;
 }
+
+a {
+    text-decoration: none;
+    color: purple
+}
+
+.button {
+  background-color: #552f75;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: bold; 
+  border-style: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin: 3px 5px;
+  min-width: 35px;
+  cursor: pointer;
+}
 </style>
 
