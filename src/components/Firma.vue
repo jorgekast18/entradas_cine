@@ -1,5 +1,13 @@
 <template>
-   <canvas @mouseover="drawSign" ref="canFirma" class="firma" width="380" height="200"></canvas> 
+   <canvas 
+    @mousemove="drawSign" 
+    @mousedown="drawing=true" 
+    @mouseup="drawStop" 
+    @contextmenu.prevent
+    ref="canFirma" 
+    class="firma" 
+    width="380" 
+    height="200"></canvas> 
 </template>
 
 <script>
@@ -7,16 +15,23 @@ export default {
     data() {
         return {
             ctx: null,
-            x0: 0,
-            y0: 0
+            x0: -1,
+            y0: -1,
+            drawing: false
         }
     },
     methods: {
+        drawStop() {
+            this.drawing = false
+            this.x0 = -1
+            this.y0 = -1
+        },
         drawSign(event) {
-
-            if(this.x0 === -1 || this.y0 === -1) {
-                this.x0 = this.ctx.offsetX
-                this.y0 = this.ctx.offsetY
+            if(!this.drawing) { return }
+            
+            if(this.x0 == -1 || this.y0 == -1) {
+                this.x0 = event.offsetX
+                this.y0 = event.offsetY
                 return
             }
             const x1 = event.offsetX

@@ -50,5 +50,13 @@ a {
   min-width: 35px;
   cursor: pointer;
 }
+
+input[type='text'] {
+  border-radius: 5px;
+  font-size: 2.4rem;
+  width: 100%;
+  line-height: 4rem;
+  padding: 3px;
+}
 </style>
 

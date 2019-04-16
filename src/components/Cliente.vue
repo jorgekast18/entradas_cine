@@ -1,5 +1,5 @@
 <template>
-    <div class="seccion">
+    <div class="seccion" id="cliente">
         <div class="atributo">
             <span>{{ names }} {{ lastNames }}</span>
         </div>
@@ -12,11 +12,15 @@
         <div class="atributo">
             <span>Edad: {{ age }}</span>
         </div>
+        <div class="atributo">
+            <span>{{ email }}</span>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    props: ['email'],
     data() {
         return {
             names: 'Isaac',
@@ -40,6 +44,9 @@ export default {
             let currentAge = currentDate - date
             return Math.floor(currentAge / (1000 * 60 * 60 * 24 * 365.25))
         }
+    },
+    created() {
+        this.$emit('onChangeEmail', 'newton@email.com')
     }
     
 }

@@ -1,7 +1,8 @@
 <template>
     <div>
         <Anuncio/>
-        <Cliente/>
+        <Cliente :email="email" @onChangeEmail="updateEmail"/>
+        <Email :emailReceived="email" @onChangeEmail="updateEmail"/>
         <Boletos/>
         <Firma/>
     </div>
@@ -12,8 +13,19 @@ import Cliente from '@/components/Cliente'
 import Anuncio from '@/components/Anuncio'
 import Boletos from '@/components/Boletos'
 import Firma from '@/components/Firma'
+import Email from '@/components/Email'
 export default {
-    components: { Cliente, Anuncio, Boletos, Firma }
+    components: { Cliente, Anuncio, Boletos, Firma, Email },
+    data() {
+        return {
+            email: ''
+        }
+    },
+    methods: {
+        updateEmail(email  ) {
+            this.email = email
+        }
+    }
 }
 </script>
 
