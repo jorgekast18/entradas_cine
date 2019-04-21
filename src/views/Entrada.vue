@@ -2,8 +2,8 @@
     <div>
         <Anuncio/>
         <Cliente :email="email" @onChangeEmail="updateEmail"/>
-        <Email :emailReceived="email" @onChangeEmail="updateEmail"/>
         <Boletos/>
+        <Email :emailReceived="email" @onChangeEmail="updateEmail"/>
         <Firma/>
     </div>
 </template>
